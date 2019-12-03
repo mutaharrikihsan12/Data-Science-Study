@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Ini Page Plots</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Distribusi Data Kolom MPG</h4>
+            <div class="chart" id="mpg_plot">
+
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Distribusi Data Kolom Horsepower</h4>
+        <div class="chart" id="horse_plot">
+
+        </div>
+    </div>
+</div>
+
+    <script>
+        // var count_type1 = {{data | safe}}
+        Plotly.plot('mpg_plot' , {{data[0] | safe}} , {})
+        Plotly.plot('horse_plot' , {{data[1] | safe}} , {})
+    </script>
+{% endblock body %}
